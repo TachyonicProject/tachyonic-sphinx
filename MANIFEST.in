@@ -1,0 +1,14 @@
+# Top level.
+include *.txt
+include *.rst
+
+# Non-python files.
+#recursive-include tachyonic_sphinx *
+graft tachyonic_sphinx/tachyonic
+
+# Extraneous files.
+global-exclude .DS_Store
+global-exclude *.pyc
+exclude bootstrap
+exclude demo
+exclude fabfile.py

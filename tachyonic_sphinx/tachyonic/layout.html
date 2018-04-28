@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <link rel="icon" href="{{ pathto('_static/' + 'icon.png', 1) }}">
+        <link type="text/css" rel="stylesheet" href="{{ pathto('_static/' + 'jquery-ui/jquery-ui.min.css', 1) }}">
+        <link type="text/css" rel="stylesheet" href="{{ pathto('_static/' + 'bootstrap/css/bootstrap.min.css', 1) }}">
+        <link type="text/css" rel="stylesheet" href="{{ pathto('_static/' + 'tachweb.css', 1) }}">
+        <link type="text/css" rel="stylesheet" href="{{ pathto('_static/' + 'doc.css', 1) }}">
+        <script type="text/javascript" src="{{ pathto('_static/' + 'jquery-3.2.1.min.js', 1) }}"></script>
+        <script type="text/javascript" src="{{ pathto('_static/' + 'jquery-ui/jquery-ui.min.js', 1) }}"></script>
+        <script type="text/javascript" src="{{ pathto('_static/' + 'bootstrap/js/bootstrap.min.js', 1) }}"></script>
+        <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+
+        <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+
+    </head>
+    <body>
+        <div class="bg-dark">                                                                                                            
+			<div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a href="{{ pathto('index.html', 1) }}" class="navbar-brand">
+                        <img src="{{ pathto('_static/' + 'icon.png', 1) }}" height="30px" alt="Logo" class="mr-2">
+                        {{ shorttitle }}
+                    </a>
+				</nav>
+			</div>
+        </div>
+        <div class="heading">
+            <div class="container">
+                <H1 class="heading">{{ title|striptags|e }}{{ titlesuffix }}</H1>
+            </div>
+        </div>
+        <div class="extra">
+            <div class="container">
+            </div>
+        </div>
+        <div class="page">
+        <!--DOC-->
+            <div class="rst-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="toctree-wrapper doc-menu">
+                            {{ toctree() }}
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        {% block body %} {% endblock %}
+                    </div>
+                </div>
+            </div>
+            </div>
+        <!--DOC-->
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<span class="float-right"><a href="#">Back to top</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+                        <span class="white">&copy; {{ copyright }} </span>
+					</div>
+				</div>
+			</div>
+		</footer>
+    </body>
+</html>
